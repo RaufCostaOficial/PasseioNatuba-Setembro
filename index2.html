@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excursão Natuba – PB | Rauf Costa Turismo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #4a148c; /* Roxo uva profundo */
+            --secondary-color: #2e7d32; /* Verde parreiral */
+            --accent-color: #ffeb3b; /* Amarelo vibrante */
+            --whatsapp-color: #25d366;
+            --text-dark: #212121;
+            --text-light: #ffffff;
+            --bg-light: #f5f5f5;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            overflow-x: hidden;
+        }
+
+        /* Banner em Largura Total */
+        .hero-banner {
+            width: 100%;
+            display: block;
+        }
+
+        .hero-banner img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Barra de Destaques (Data e Saída) */
+        .highlights-bar {
+            background: var(--primary-color);
+            color: white;
+            padding: 15px 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .h-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 700;
+            font-size: 1rem;
+        }
+
+        .h-item i { color: var(--accent-color); }
+
+        /* Título e Subtítulo Após a Barra de Destaques */
+        .title-section {
+            background: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .title-section h1 {
+            font-size: clamp(2.2rem, 6vw, 3.5rem);
+            color: var(--primary-color);
+            font-weight: 900;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            line-height: 1.1;
+        }
+
+        .title-section p {
+            font-size: clamp(1.1rem, 3vw, 1.4rem);
+            color: #444;
+            max-width: 850px;
+            margin: 0 auto 30px;
+            font-weight: 500;
+        }
+
+        .cta-main {
+            background-color: var(--whatsapp-color);
+            color: white;
+            padding: 18px 35px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 800;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        .cta-main:hover {
+            transform: translateY(-3px);
+            background-color: #128c7e;
+            box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+        }
+
+        /* Seções Otimizadas */
+        .section {
+            padding: 60px 20px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.4rem;
+            color: var(--primary-color);
+            margin-bottom: 35px;
+            font-weight: 800;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 5px;
+            background: var(--secondary-color);
+            margin: 12px auto 0;
+            border-radius: 2px;
+        }
+
+        /* Descrição de Natuba */
+        .natuba-desc {
+            background: #f9f9f9;
+            text-align: center;
+        }
+
+        .natuba-desc p {
+            max-width: 900px;
+            margin: 0 auto;
+            font-size: 1.2rem;
+            color: #333;
+            line-height: 1.8;
+        }
+
+        /* Galeria */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+
+        .gallery-item {
+            height: 250px;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .gallery-item:hover img { transform: scale(1.1); }
+
+        /* Timeline */
+        .timeline-item {
+            padding: 20px;
+            background: white;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border-left: 5px solid var(--secondary-color);
+            display: flex;
+            gap: 20px;
+        }
+
+        .time {
+            background: var(--secondary-color);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            min-width: 95px;
+            text-align: center;
+            font-size: 1rem;
+        }
+
+        /* Prova Social */
+        .testimonials { background: #f0f4f8; }
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+        .testimonial-card {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+        }
+
+        /* Política de Reembolso */
+        .refund-policy {
+            background: #fff;
+            padding: 60px 20px;
+            border-top: 1px solid #eee;
+        }
+        .refund-content {
+            max-width: 900px;
+            margin: 0 auto;
+            font-size: 1rem;
+            color: #555;
+        }
+        .refund-content h3 { color: var(--primary-color); margin-bottom: 20px; font-size: 1.8rem; }
+        .refund-content ul { margin-left: 25px; margin-bottom: 20px; }
+
+        /* Investimento */
+        .price-section {
+            background: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+            border-radius: 30px;
+            margin: 40px 20px;
+        }
+        .price-value {
+            font-size: 4rem;
+            font-weight: 900;
+            color: var(--accent-color);
+            margin: 10px 0;
+        }
+
+        /* Footer */
+        footer {
+            background: #111;
+            color: white;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: var(--whatsapp-color);
+            color: white;
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 35px;
+            box-shadow: 2px 5px 15px rgba(0,0,0,0.3);
+            z-index: 1000;
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .timeline-item { flex-direction: column; gap: 10px; }
+            .time { width: 100%; }
+            .price-value { font-size: 3rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <a href="https://wa.me/5583986171121?text=Olá! Quero garantir minha vaga para o passeio em Natuba!" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Banner em Largura Total -->
+    <div class="hero-banner">
+        <img src="https://mega.nz/file/zw1WwSTZ#jsm0HkMOBAMjIqJW-9U_iwXpRv5sxOJ9gz67bQWRldQ" alt="Excursão Natuba Paraíba">
+    </div>
+
+    <!-- Barra de Destaques (Data e Saída) -->
+    <div class="highlights-bar">
+        <div class="h-item"><i class="fas fa-calendar-alt"></i> 27 de Setembro de 2026</div>
+        <div class="h-item"><i class="fas fa-clock"></i> Saída: 05:15h</div>
+        <div class="h-item"><i class="fas fa-map-marker-alt"></i> Posto do Almeidão (JP)</div>
+    </div>
+
+    <!-- Título e CTA Principal -->
+    <section class="title-section">
+        <h1>Excursão Natuba – PB</h1>
+        <p>A "Terra das Uvas" espera por você para um dia de tradição, aventura e sabores inesquecíveis.</p>
+        <a href="https://wa.me/5583986171121?text=Olá! Quero garantir minha vaga para o passeio em Natuba!" class="cta-main" target="_blank">
+            <i class="fab fa-whatsapp"></i> GARANTIR MINHA VAGA AGORA
+        </a>
+    </section>
+
+    <!-- Descrição de Natuba -->
+    <section class="natuba-desc section">
+        <h2 class="section-title">Conheça Natuba</h2>
+        <p>
+            Localizada no Agreste Paraibano, Natuba é a <strong>Capital Paraibana da Uva</strong>. 
+            Com clima serrano e solo fértil, destaca-se pela produção de uvas e vinhos artesanais. 
+            Encanta com cachoeiras, mirantes e gastronomia regional autêntica. 
+            O destino ideal para desconectar e viver uma experiência rural inesquecível.
+        </p>
+    </section>
+
+    <!-- Galeria -->
+    <section class="section" style="background: #fff; max-width: 100%;">
+        <div style="max-width: 1100px; margin: 0 auto; padding: 0 20px;">
+            <h2 class="section-title">Galeria de Fotos Reais</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item"><img src="images/grapes.jpg" alt="Parreirais"></div>
+                <div class="gallery-item"><img src="images/nature.jpg" alt="Cachoeira"></div>
+                <div class="gallery-item"><img src="images/hero.jpg" alt="Experiência"></div>
+                <div class="gallery-item"><img src="images/hero_new.jpg" alt="Passeio"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vídeo da Experiência -->
+    <section class="section" style="background: #f9f9f9; max-width: 100%;">
+        <div style="max-width: 900px; margin: 0 auto; padding: 0 20px;">
+            <h2 class="section-title">Veja a Experiência Real</h2>
+            <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.15);">
+                <iframe 
+                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;"
+                    src="https://www.youtube.com/embed/ZgTsMFiiR3M" 
+                    title="Vídeo Natuba PB" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cardápio -->
+    <section class="section">
+        <h2 class="section-title">Cardápio do Chá da Tarde</h2>
+        <div style="background: white; border-radius: 25px; overflow: hidden; box-shadow: 0 15px 40px rgba(0,0,0,0.1); display: flex; flex-wrap: wrap;">
+            <div style="background: var(--primary-color); color: white; padding: 40px; flex: 1; min-width: 300px; text-align: center;">
+                <i class="fas fa-utensils fa-3x" style="margin-bottom: 20px; color: var(--accent-color);"></i>
+                <h3>Gastronomia Afetiva</h3>
+                <p>Sabores regionais inclusos no pacote.</p>
+            </div>
+            <div style="flex: 2; min-width: 300px; padding: 40px; display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px;">
+                <div>
+                    <h4 style="color: var(--secondary-color); margin-bottom: 10px;">Bebidas</h4>
+                    <ul style="list-style: none;">
+                        <li>• Café e Leite</li>
+                        <li>• Chá de Laranja</li>
+                        <li>• Suco de Uva Isabel</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="color: var(--secondary-color); margin-bottom: 10px;">Salgados</h4>
+                    <ul style="list-style: none;">
+                        <li>• Farofa de cuscuz</li>
+                        <li>• Pães e Torradas</li>
+                        <li>• Tapioca na hora</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="color: var(--secondary-color); margin-bottom: 10px;">Doces</h4>
+                    <ul style="list-style: none;">
+                        <li>• Munguzá</li>
+                        <li>• Bolo de Rolo</li>
+                        <li>• Frutas da estação</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Roteiro -->
+    <section class="section" style="background: #fff; max-width: 100%;">
+        <div style="max-width: 1100px; margin: 0 auto; padding: 0 20px;">
+            <h2 class="section-title">Roteiro da Experiência</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="time">10:00h</div>
+                    <div class="timeline-content">
+                        <h3>Início: Igreja Matriz</h3>
+                        <p>Parque Ambiental, Turismo Cultural e Artesanato.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="time">Manhã</div>
+                    <div class="timeline-content">
+                        <h3>Cachoeira da Bica Grande</h3>
+                        <p>Caminhada leve de 300m até a queda d'água.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="time">12:00h</div>
+                    <div class="timeline-content">
+                        <h3>Almoço Regional</h3>
+                        <p>Restaurante local (Almoço à parte, média R$ 30).</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="time">14:30h</div>
+                    <div class="timeline-content">
+                        <h3>Parreiral & Pisa da Uva</h3>
+                        <p>Chá da tarde, degustação e pisa tradicional.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="time">16:30h</div>
+                    <div class="timeline-content">
+                        <h3>Mirante e Retorno</h3>
+                        <p>Fotos no Mirante e início do retorno às 17:00h.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Prova Social -->
+    <section class="testimonials section">
+        <h2 class="section-title">Quem já foi, recomenda!</h2>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <p style="font-style: italic; margin-bottom: 20px; color: #444;">"A experiência de pisar nas uvas é mágica! O roteiro é muito bem organizado."</p>
+                <h4 style="color: var(--primary-color);">Maria Silva ⭐⭐⭐⭐⭐</h4>
+            </div>
+            <div class="testimonial-card">
+                <p style="font-style: italic; margin-bottom: 20px; color: #444;">"Natuba me surpreendeu. A cachoeira é linda e o passeio de Toyota é nota 10!"</p>
+                <h4 style="color: var(--primary-color);">João Pereira ⭐⭐⭐⭐⭐</h4>
+            </div>
+            <div class="testimonial-card">
+                <p style="font-style: italic; margin-bottom: 20px; color: #444;">"Melhor passeio do ano! O suco de uva é o melhor que já tomei."</p>
+                <h4 style="color: var(--primary-color);">Ana Oliveira ⭐⭐⭐⭐⭐</h4>
+            </div>
+            <div class="testimonial-card">
+                <p style="font-style: italic; margin-bottom: 20px; color: #444;">"Um dia inesquecível com a família. Tudo perfeito e muito seguro."</p>
+                <h4 style="color: var(--primary-color);">Carlos Santos ⭐⭐⭐⭐⭐</h4>
+            </div>
+        </div>
+    </section>
+
+    <!-- Investimento -->
+    <section class="price-section">
+        <p style="text-transform: uppercase; font-weight: 700; letter-spacing: 2px;">Valor por Pessoa</p>
+        <div class="price-value">R$ 279,90</div>
+        <p>Pagamento via PIX ou Cartão</p>
+        <div style="margin-top: 40px;">
+            <a href="https://wa.me/5583986171121?text=Olá! Quero garantir minha vaga para o passeio em Natuba!" class="cta-main" style="background: white; color: var(--primary-color);">
+                <i class="fab fa-whatsapp"></i> RESERVAR MINHA VAGA AGORA
+            </a>
+        </div>
+    </section>
+
+    <!-- Política de Reembolso -->
+    <section class="refund-policy">
+        <div class="refund-content">
+            <h3>Política de Cancelamento e Reembolso</h3>
+            <p>Em conformidade com o Código de Defesa do Consumidor e a Deliberação Normativa nº 161/85 da EMBRATUR, estabelecemos as seguintes condições:</p>
+            <ul>
+                <li><strong>Direito de Arrependimento:</strong> Cancelamentos em até 7 dias após a compra garantem reembolso integral (100%), desde que solicitados com antecedência mínima de 48h da viagem.</li>
+                <li><strong>Cancelamento pelo Cliente:</strong>
+                    <ul>
+                        <li>Até 30 dias antes da saída: 90% de reembolso.</li>
+                        <li>De 29 a 21 dias antes da saída: 80% de reembolso.</li>
+                        <li>De 20 a 07 dias antes da saída: 50% de reembolso.</li>
+                        <li>Menos de 07 dias antes da saída: Não haverá reembolso (No-show).</li>
+                    </ul>
+                </li>
+                <li><strong>Cancelamento pela Agência:</strong> Caso a viagem seja cancelada por falta de quórum ou motivos de força maior, o valor será devolvido integralmente ou convertido em crédito para viagens futuras, à escolha do cliente.</li>
+            </ul>
+            <p style="font-size: 0.9rem; opacity: 0.8;">* Taxas administrativas de cartões ou plataformas de pagamento podem ser retidas conforme o caso.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p style="font-size: 1.2rem; font-weight: 700; color: var(--accent-color);">Rauf Costa Turismo</p>
+        <p style="margin-top: 10px; opacity: 0.7;">Organização Profissional de Viagens e Excursões.</p>
+        <p style="margin-top: 30px; font-size: 0.8rem; opacity: 0.5;">&copy; 2026 Todos os direitos reservados. Natuba - PB.</p>
+    </footer>
+
+</body>
+</html>
